@@ -964,11 +964,29 @@ LIMIT 0, 5;
 SELECT MONTH(hire_date) AS 월, COUNT(*) AS 입사자수
 FROM employees
 GROUP BY MONTH(hire_date)
-ORDER BY 입사자수 DESC
+ORDER BY COUNT(*) DESC
 LIMIT 3;
 
 
 
+/*================================================================================
+ WITH 절과 CTE
+ 
+ WITH절은 CTE(Common Table Expression)를 표현하기 위한 구문으로 MySQL8.0부터  사용할 수 있다.
+ CTE는 기존의 뷰, 파생테이블, 임시 테이블 등으로 사용되던 것을 대신할 수 있다.
+ CTE는 ANSI-SQL99 표준에서 나온 것이다. 기존의 SQL ANSI-SQL92를 기준으로 한다.
+ 최근의 DBMS(DataBase Management System)는 대개 ANSI-SQL99와 호환되므로  다른 DBMS에서도 같거나
+ 비슷한 방식으로 응용한다.
+ CTE는 비재귀적(Non-Recursive) CTE와 재귀적(Recursive) CTE두 가지가 있다.
+ 
+ <비재귀적(Non-Recursive) CTE>
+ WITH CTE_테이블이름(열이름)
+ AS
+ (
+   쿼리문;
+ )
+ SELECT 열이름 FROM CTE_테이블이름;
+ ===================================================================================*/
 
 
 
