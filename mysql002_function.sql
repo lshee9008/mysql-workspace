@@ -988,5 +988,27 @@ LIMIT 3;
  SELECT 열이름 FROM CTE_테이블이름;
  ===================================================================================*/
 
+ WITH  deptcnt(id, total)
+AS
+(SELECT department_id, count(*)
+FROM employees
+GROUP BY department_id)
+SELECT id, total FROM deptcnt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
